@@ -29,3 +29,13 @@ dependencies {
     // 'test.useTestNG()' to your build script.
     testCompile 'junit:junit:4.12'
 }
+
+// Execute main functions like:
+// ./gradlew -PmainClass=hwserver execute
+// ./gradlew -PmainClass=hwclient execute
+task execute(type:JavaExec) {
+    classpath = sourceSets.main.runtimeClasspath
+
+    main = project.hasProperty("mainClass") ? project.getProperty("mainClass") : "hwserver"
+}
+
