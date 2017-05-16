@@ -4,8 +4,18 @@
  *
  * @author conanyuan, @date 5/7/17 10:34 PM
  */
+import com.google.protobuf.Message;
+import java.util.ArrayList;
+import cy.example.Test;
+
 public class Library {
     public boolean someLibraryMethod() {
+        
+        //Msg m = new Msg();
+        //cy.example.Msg.getDefaultInstance();
+        ArrayList<Message> list = new ArrayList<Message>();
+        list.add(Test.Msg.getDefaultInstance());
+        list.add(cy.example.Test.Msg.getDefaultInstance());
         return true;
     }
 }
